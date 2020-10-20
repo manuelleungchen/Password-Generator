@@ -1,19 +1,20 @@
-// Assignment Code
-var generateBtn = document.querySelector("#generate");
+/* Assignment Code */
 
-// Write password to the #password input
+/* Gets HTML element with id of 'generate' */
+var generateBtn = document.getElementById("generate");
+
+/* Write password to the #password input */
 function writePassword() {
-    var password = generatePassword();
+    var password = generatePassword();  // Calls function generatePassword and obtain a random password
 
-    var passwordText = document.querySelector("#password");
+    // Gets HTML element with id of 'password'
+    var passwordText = document.getElementById("password"); 
 
-    passwordText.value = password;
-    // console.log(password);
+    passwordText.value = password;  // Replace textarea with the value of variable password 
 }
 
 /* This function takes an array and a variable to check for true or false values. 
 If true, it adds the passed string ('lower', 'upper', 'number' or 'special') to the array. */
-
 function addCriteria (checkCriteria, criteriaName, criteriaArray) {
     // Check if the criteria sent is true
     if(checkCriteria === true) {
@@ -24,7 +25,6 @@ function addCriteria (checkCriteria, criteriaName, criteriaArray) {
 /* This function takes an array and a length value. 
 Then expand the array until it matched the required length. 
 Finally, it uses Fisher-Yates Algorithm to shuffle the new array order */
-
 function shufflePassword (myArray) {
     // Use Fisher-Yates Algorithm to shuffle the array order
     for(var x = myArray.length - 1; x > 0; x--){
@@ -38,7 +38,6 @@ function shufflePassword (myArray) {
 
 /* This function takes 2 numbers (lowNum and highNum, and return an array with 
 the numbers in between including lowNum and highNum) */
-
 function arrayFromLowNumToHighNum (lowNum, highNum) {
     var myArray = [];   // Create an empty array
     for (var index = lowNum; index <= highNum; index+=1) {  // Creates a loop from lowNum and highNum
@@ -49,12 +48,12 @@ function arrayFromLowNumToHighNum (lowNum, highNum) {
 
 /* This function takes an array and its length and pick a random value from it */
 function pickRandomlyFromCharArray (charArray, arrayLength) {
-    var randonIndex = Math.floor(Math.random() * arrayLength);
-    return String.fromCharCode(charArray[randonIndex]);
+    var randonIndex = Math.floor(Math.random() * arrayLength);  // Pick a random index value from arrayLength
+    return String.fromCharCode(charArray[randonIndex]);  // Covert ascii code to string and return it 
 }
 
+/* This function generate and return a random sting of characters based on user criteria */
 function generatePassword() {
-
     // Call function arrayFromLowNumToHighNum which return an array with values between the min and max numbers (including min and max num)
     var lowercaseCharCode = arrayFromLowNumToHighNum (97, 122); 
     var upppercaseCharCode = arrayFromLowNumToHighNum (65, 90);
@@ -78,8 +77,7 @@ function generatePassword() {
         alert("Password length must be between 8-128 characters! Please Try Again");
         passwordLength = prompt("How many characters would you like on your password?");
     } 
-
-    console.log("Password Length", passwordLength);
+    // console.log("Password Length", passwordLength);
 
     // Determine the parameters for the password
     var confirmLowercase = confirm("Would you like lowercase characters?");
@@ -106,12 +104,10 @@ function generatePassword() {
     addCriteria(confirmNumbers, "num", criteriaList);
     // Add criteria to criteriaList if True for confirmSpecialChar
     addCriteria(confirmSpecialChar, "special", criteriaList);
-
-    console.log("Criteria required:", criteriaList);
+    // console.log("Criteria required:", criteriaList);
 
     /* Store the new password generated */
     var passwordArray = [];
-    console.log("Password Array:", passwordArray);
     
     var counter = 0;   // Counter for while loop
 
@@ -144,7 +140,7 @@ function generatePassword() {
                 break;  // Stop Switch Case
         }
     }
-    console.log("Password Array with at least one of each char type:", passwordArray);
+    // console.log("Password Array with at least one of each char type:", passwordArray);
 
     // Loops through criteriaList array until password meet required length
     while (counter < passwordLength) {
@@ -177,30 +173,31 @@ function generatePassword() {
                 break;  // Stop Switch Case
         }
     }
-    console.log("Password Array before shuffled:", passwordArray);
+    // console.log("Password Array before shuffled:", passwordArray);
 
     // Call shufflePassword function and return its value to passwordArray
     passwordArray = shufflePassword(passwordArray);
-    console.log("Password Array after shuffled:", passwordArray);
+    // console.log("Password Array after shuffled:", passwordArray);
 
     var password = ""; // Create an empty string
     // Loop through passwordArray
     for (var y = 0; y < passwordArray.length; y++) {
         password += passwordArray[y];  // At each loop concatenate each passwordArray value to the password string
     }
-    console.log("Password:", password);    // Print password string to console
+    // console.log("Password:", password);    // Print password string to console
     return password;  // Return password string
 }
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
+// Find the textarea tag on the page and call this function when clicked
 document.querySelector("textarea").onclick = function(){
-    document.querySelector("textarea").select();
-    document.execCommand('copy');
+    document.querySelector("textarea").select();   // Find textarea and select content inside
+    document.execCommand('copy');  // Copy text to clipboard
 }
 
 // This toggle a popup message when click on textarea
 $(document).ready(function(){
-    $('[data-toggle="popover"]').popover();   
-  });
+    $('[data-toggle="popover"]').popover();
+});

@@ -1,9 +1,11 @@
+/* Style all elements on the page to include margin, padding with content width  */
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
+/* Sets the html, body, wrapper div to use the whole height of the page */
 html,
 body,
 .wrapper {
@@ -12,17 +14,20 @@ body,
   padding: 0;
 }
 
+/* Sets font type and color */
 body {
   font-family: sans-serif;
   background-color: #f9fbfd;
 }
 
+/* Adds paddings around the main wrapper div */
 .wrapper {
   padding-top: 30px;
   padding-left: 20px;
   padding-right: 20px;
 }
 
+/* Style the main header */
 header {
   text-align: center;
   padding: 20px;
@@ -30,6 +35,7 @@ header {
   color: hsl(206, 17%, 28%);
 }
 
+/* Style the card div */
 #card {
   background-color: hsl(0, 0%, 100%);
   border-radius: 5px;
@@ -42,6 +48,7 @@ header {
   padding: 30px 40px;
 }
 
+/* Adds a empty div element after the card header div */
 #card-header::after {
   content: " ";
   display: block;
@@ -50,18 +57,22 @@ header {
   height: 2px;
 }
 
+/*  Sets minimum height for the card body */
 #card-body {
   min-height: 100px;
 }
 
+/* Change the background color of the popover message */
 .popover {
     background-color: rgb(173, 218, 173);
   }
 
+/* Centers the Footer card text */
 #card-footer {
   text-align: center;
 }
 
+/* Adds a empty div element before the card footer div */
 #card-footer::before {
   content: " ";
   display: block;
@@ -70,12 +81,14 @@ header {
   height: 2px;
 }
 
+/* Clear any floating elements after the card footer */
 #card-footer::after {
   content: " ";
   display: block;
   clear: both;
 }
 
+/* Style the button */
 .btn {
   border: none;
   background-color: hsl(360, 91%, 36%);
@@ -92,15 +105,13 @@ header {
   cursor: pointer;
 }
 
+/* Style button after pressed */
 button[disabled] {
   cursor: default;
   background: #c0c7cf;
 }
 
-/* .float-right {
-  float: right;
-} */
-
+/* Style the textarea */
 #password {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -122,11 +133,7 @@ button[disabled] {
   overflow: hidden;
 }
 
-footer {
-    text-align: center;
-    padding: 20px;
-}
-
+/* Adjust button and textare font size, margin and padding for screen below 690px width */
 @media (max-width: 690px) {
   .btn {
     font-size: 1rem;
@@ -139,6 +146,7 @@ footer {
   }
 }
 
+/* Adjust button font size, margin and padding for screen below 500px width */
 @media (max-width: 500px) {
   .btn {
     font-size: 0.8rem;
