@@ -4,13 +4,10 @@
         <!-- Meta tags -->
         <meta charset="UTF-8"> <!-- Enconding type -->
         <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- Meta tag for scaling Viewport -->
-        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />  <!-- Adds support for IE9 or IE8 browsers -->
 
         <!-- Favicon -->
-        <!-- <link rel="apple-touch-icon" sizes="180x180" href="./assets/images/favicon_io/apple-touch-icon.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon_io/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="./assets/images/favicon_io/favicon-16x16.png">
-        <link rel="manifest" href="./assets/images/favicon_io/site.webmanifest"> -->
+        <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon_io/favicon.ico">
 
         <!-- Page Title -->
         <title>Password Generator</title>
@@ -27,7 +24,6 @@
     </head><!-- head closing tag -->
 
     <body>
-        
         <main class="wrapper">
             <header>
                 <h1>Password Generator</h1>
@@ -35,7 +31,7 @@
             <div id="card">
                 <div id="card-header">
                     <h2>Generate a Password</h2>
-                </div>
+                </div><!-- #card-header -->
                 <div id="card-body">
                     <textarea
                         readonly
@@ -44,12 +40,12 @@
                         aria-label="Generated Password"
                         data-toggle="popover" data-placement="top" data-content="Copied to Clipboard" data-trigger="focus"
                     ></textarea>
-                </div>
+                </div><!-- #card-body -->
                 <div id="card-footer">
                     <button id="generate" class="btn">Generate Password</button>
-                </div>
-            </div>
-        </main><!-- .container -->
+                </div><!-- #card-footer -->
+            </div><!-- #card -->
+        </main><!-- .wrapper -->
 
         <!-- Bootstrap JQuery and JavaScript -->
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
@@ -61,10 +57,3 @@
 
     </body><!-- body closing tag -->
 </html><!-- html closing tag -->
-
-
-
-
-
-
-
