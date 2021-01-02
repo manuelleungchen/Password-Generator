@@ -25,6 +25,8 @@ This repository **\([Password-Generator](https://github.com/manuelleungchen/Pass
 6. Paste password
 
 ## Credits
+Fisher-Yates Algorithm was used to shuffle an array
+
 All changes and improvements were implemented by:
 
 Manuel Leung Chen [GitHub](https://github.com/manuelleungchen)
